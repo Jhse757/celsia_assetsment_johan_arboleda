@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Dropzone ";
+}
+
+<section class="h-screen content-center mx-auto max-w-2xl">
+    <div class="text-center">
+        <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">Carga Todas tus Transacciones
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">
+            Aquí podrás cargar fácilmente un archivo Excel para importar tus transacciones directamente a nuestra base
+            de datos.
+        </p>
+
+        <form asp-action="ImportData" asp-controller="Import" method="post" enctype="multipart/form-data">
+            <div class="flex flex-col items-center justify-center w-full">
+                <label for="dropzone-file"
+                    class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                        </svg>
+                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Clic para
+                                cargar</span> o arrastra y suelta</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Selecciona un archivo .xlsx</p>
+                    </div>
+                    <input id="dropzone-file" type="file" name="excelFile" class="hidden" />
+                </label>
+                <div class="h-full mt-5 grid gap-4 grid-cols-2">
+                    <!-- Botón de Importar -->
+                    <button type="submit"
+                        class="shadow-md flex flex-row justify-center p-2 gap-2 text-white bg-primary-600 hover:bg-primary-700 focus:outline-none rounded-lg dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6">
+                            <path
+                                d="M11.47 1.72a.75.75 0 0 1 1.06 0l3 3a.75.75 0 0 1-1.06 1.06l-1.72-1.72V7.5h-1.5V4.06L9.53 5.78a.75.75 0 0 1-1.06-1.06l3-3ZM11.25 7.5V15a.75.75 0 0 0 1.5 0V7.5h3.75a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h3.75Z" />
+                        </svg>
+                        Importar
+                    </button>
+
+                    <!-- Botón de Quizás luego -->
+                    <a href="@Url.Action("Index", "Dashboard")"
+                        class="flex px-3.5 py-2.5 text-sm font-semibold text-primary-600 border border-primary-600 shadow-md hover:bg-primary-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-primary-300 rounded-lg dark:text-primary-600 dark:border-primary-600 dark:hover:bg-primary-700 dark:hover:text-white dark:focus:ring-primary-800">
+                        Quizás luego
+                    </a>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</section>
+
+@* <div class="max-w-sm shadow-md bg-white rounded-lg dark:bg-gray-800">
+    <div class="m-3 p-3">
+        <h5 class="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Materias
+        </h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            Aquí podrás ver las materias disponibles para inscribirte.
+        </p>
+        <div class="flex items-center justify-star">
+            <a href="@Url.Action("Inscriptions", "Home")"
+                class="flex rounded-lg bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                Ver más
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+                    stroke="currentColor" class="w-5 ml-1">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</div> *@

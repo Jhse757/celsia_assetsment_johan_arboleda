@@ -4,11 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - celsia_assetsment_johan_arboleda</title>
-    <link rel="stylesheet" href="~/css/output.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/output.css" asp-append-version="true"/>
 </head>
 
 <body class="bg-white dark:bg-dark-500">
-    <header>
+    <div class="relative isolate px-6 lg:px-8">
+        <header>
         <nav class="bg-white rounded-lg shadow m-2 dark:bg-gray-800">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="https://www.celsia.com/es/" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -16,9 +17,9 @@
                         alt="Flowbite Logo">
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                    <a href="@Url.Action("Index", "Login")"
+                    <a href="@Url.Action("Index", "Home")"
                         class="flex px-3.5 py-2.5 text-sm font-semibold text-white shadow-md bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 rounded-lg dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                        Login
+                        logout
                     </a>
                 </div>
             </div>
@@ -35,9 +36,10 @@
                 celsia_assetsment_johan_arboleda - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </span>
         </div>
-    </footer>    
+    </footer>
+    </div>
 </body>
-    <script src="~/path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
